@@ -1,0 +1,20 @@
+# Large model files
+cat_dog_model.h5
+
+# Datasets
+training_set/
+test_set/
+sample/
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+env/
+venv/
+.env
+
+# Flask
+static/uploads/

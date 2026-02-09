@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision - Cat vs Dog Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-grid"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-glow"></div>
+                <h1>AI <span class="highlight">VISION</span></h1>
+            </div>
+            <p class="tagline">Neural Network Classification System</p>
+            <div class="status-bar">
+                <span class="status-indicator"></span>
+                <span class="status-text">SYSTEM ONLINE</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="section-header">
+                    <h2>IMAGE UPLOAD</h2>
+                    <div class="header-line"></div>
+                </div>
+                
+                <div class="drop-zone" id="drop-zone">
+                    <div class="drop-zone-content">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span class="drop-zone__prompt">Drop image here or <span class="browse-btn">browse files</span></span>
+                        <span class="file-info">Supported: JPG, PNG, GIF (Max 16MB)</span>
+                    </div>
+                    <input type="file" name="file" id="file-input" class="drop-zone__input" accept="image/*">
+                </div>
+                
+                <button id="upload-btn" class="btn">
+                    <span class="btn-text">INITIALIZE SCAN</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </div>
+
+            <div id="result-section" class="result-section hidden">
+                <div class="section-header">
+                    <h2>ANALYSIS RESULTS</h2>
+                    <div class="header-line"></div>
+                </div>
+                
+                <div class="result-content">
+                    <div class="preview-container">
+                        <div class="scan-line"></div>
+                        <img id="image-preview" src="" alt="Preview">
+                        <div class="corner-tl"></div>
+                        <div class="corner-tr"></div>
+                        <div class="corner-bl"></div>
+                        <div class="corner-br"></div>
+                    </div>
+                    
+                    <div class="prediction-box">
+                        <div class="prediction-label">CLASSIFICATION</div>
+                        <div id="prediction-text" class="prediction-text">ANALYZING...</div>
+                        <div id="confidence-text" class="confidence-text"></div>
+                        <div class="prediction-bar">
+                            <div id="confidence-bar" class="confidence-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 AI VISION SYSTEMS</p>
+                <div class="footer-divider"></div>
+                <p>NEURAL CLASSIFICATION PROTOCOL v2.0</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+tensorflow
+keras
+flask
+werkzeug
+numpy
+pillow
