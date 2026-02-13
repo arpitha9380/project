@@ -12,7 +12,7 @@ test_dir = r"C:\Users\student\Desktop\sample\test_set\test_set"
 # Image dimensions
 IMG_HEIGHT, IMG_WIDTH = 128, 128
 BATCH_SIZE = 32
-EPOCHS = 30  # Training for 30 epochs with early stopping
+EPOCHS = 30  # Reduced to 30 epochs as requested
 
 # Enhanced Data Augmentation for better generalization
 train_datagen = ImageDataGenerator(
@@ -80,6 +80,16 @@ model.compile(
     loss='binary_crossentropy',
     metrics=['accuracy']
 )
+
+# Load existing weights if they exist for continued training
+model_path = 'cat_dog_model.h5'
+if os.path.exists(model_path):
+    print(f"\n[INFO] Loading existing model weights from {model_path} for continued training...")
+    try:
+        # Load weights only since compile is already done and architecture is defined
+        model.load_weights(model_path)
+    except Exception as e:
+        print(f"[WARNING] Could not load weights: {e}. Starting fresh training.")
 
 # Print model summary
 print("=" * 60)

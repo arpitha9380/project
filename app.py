@@ -20,9 +20,9 @@ def allowed_file(filename):
 model = None
 try:
     model = tf.keras.models.load_model('cat_dog_model.h5')
-    print("✓ Model loaded successfully")
+    print("Model loaded successfully")
 except Exception as e:
-    print(f"⚠ Model not found or error loading model: {e}")
+    print(f"Model not found or error loading model: {e}")
 
 def predict_image(img_path):
     """Predict if image is a cat or dog"""
@@ -75,4 +75,4 @@ def predict():
         })
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=7860)
